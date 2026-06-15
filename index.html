@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown GTA</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-600 via-purple-900 to-orange-500">
+
+  <div class="text-center">
+
+    <h1 class="text-5xl md:text-7xl font-extrabold uppercase tracking-widest text-white mb-10 drop-shadow-lg">
+      Countdown
+    </h1>
+
+    <div id="timer" class="flex flex-wrap justify-center gap-5">
+
+      <div class="bg-black/30 backdrop-blur-md border border-pink-400 rounded-2xl p-6 min-w-[120px] shadow-[0_0_25px_rgba(236,72,153,0.6)]">
+        <div id="days" class="text-5xl font-bold text-pink-300">0</div>
+        <div class="text-white uppercase text-sm tracking-wider">Dias</div>
+      </div>
+
+      <div class="bg-black/30 backdrop-blur-md border border-fuchsia-400 rounded-2xl p-6 min-w-[120px] shadow-[0_0_25px_rgba(192,132,252,0.6)]">
+        <div id="hours" class="text-5xl font-bold text-fuchsia-300">0</div>
+        <div class="text-white uppercase text-sm tracking-wider">Horas</div>
+      </div>
+
+      <div class="bg-black/30 backdrop-blur-md border border-orange-400 rounded-2xl p-6 min-w-[120px] shadow-[0_0_25px_rgba(251,146,60,0.6)]">
+        <div id="minutes" class="text-5xl font-bold text-orange-300">0</div>
+        <div class="text-white uppercase text-sm tracking-wider">Minutos</div>
+      </div>
+
+      <div class="bg-black/30 backdrop-blur-md border border-cyan-400 rounded-2xl p-6 min-w-[120px] shadow-[0_0_25px_rgba(34,211,238,0.6)]">
+        <div id="seconds" class="text-5xl font-bold text-cyan-300">0</div>
+        <div class="text-white uppercase text-sm tracking-wider">Segundos</div>
+      </div>
+
+    </div>
+
+  </div>
+
+<script>
+const targetDate = new Date('2026-11-19T12:00:00-05:00');
+
+function updateCountdown() {
+  const now = new Date();
+  const diff = targetDate - now;
+
+  if (diff <= 0) {
+    document.getElementById('timer').innerHTML =
+      '<h2 class="text-5xl text-white font-bold">🚀 LANÇOU!</h2>';
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  document.getElementById('days').textContent = days;
+  document.getElementById('hours').textContent = hours;
+  document.getElementById('minutes').textContent = minutes;
+  document.getElementById('seconds').textContent = seconds;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
