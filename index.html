@@ -1,273 +1,55 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTA VI Countdown</title>
 
-<title>GTA VI Countdown</title>
-
-<meta name="description" content="Countdown to the release of GTA VI.">
-<meta name="keywords" content="GTA 6, GTA VI, Countdown, Rockstar Games">
-<meta name="author" content="Your Name">
-
-<link rel="canonical" href="https://yourdomain.com">
-<link rel="icon" href="/favicon.png">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="GTA VI Countdown">
-<meta property="og:description" content="Countdown to the launch of GTA VI.">
-<meta property="og:url" content="https://yourdomain.com">
-<meta property="og:image" content="https://yourdomain.com/og-image.jpg">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GTA VI Countdown">
-<meta name="twitter:description" content="Countdown to the launch of GTA VI.">
-<meta name="twitter:image" content="https://yourdomain.com/og-image.jpg">
-
-<meta name="theme-color" content="#ff2ea6">
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<style>
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-25px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes glow {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 15px rgba(255,46,166,.3);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 0 45px rgba(255,140,66,.7);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 15px rgba(255,46,166,.3);
-  }
-}
-
-body{
-  margin:0;
-  overflow:hidden;
-  background: #0b0014;
-  font-family: Arial, sans-serif;
-}
-
-.floating{
-  animation: float 8s ease-in-out infinite;
-}
-
-.timer-card{
-  animation: glow 3s ease-in-out infinite;
-  transition: .3s;
-}
-
-.timer-card:hover{
-  transform: scale(1.07) translateY(-6px);
-}
-
-.title{
-  text-shadow:
-    0 0 10px rgba(255,255,255,.5),
-    0 0 25px rgba(255,46,166,.8),
-    0 0 60px rgba(255,140,66,.6);
-}
-
-.neon{
-  text-shadow:
-    0 0 8px currentColor,
-    0 0 20px currentColor,
-    0 0 40px currentColor;
-}
-
-.select{
-  background: rgba(0,0,0,.4);
-  border: 1px solid rgba(255,46,166,.4);
-  color: white;
-  padding: 10px 16px;
-  border-radius: 14px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 0 20px rgba(255,46,166,.4);
-}
-
-.bg-glow{
-  position:fixed;
-  inset:0;
-  background: linear-gradient(135deg,#ff2ea6,#7c3aed,#1a0033,#ff7a18);
-  opacity:.85;
-}
-
-.blur{
-  position:fixed;
-  inset:0;
-  backdrop-filter: blur(35px);
-}
-
-.orb{
-  position:absolute;
-  width:420px;
-  height:420px;
-  border-radius:50%;
-  filter: blur(80px);
-  opacity:.35;
-}
-
-.orb.pink{background:#ff2ea6; top:0; left:0;}
-.orb.orange{background:#ff7a18; bottom:0; right:0;}
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="bg-glow"></div>
-<div class="blur"></div>
+  <div class="background-image"></div>
+  <div class="background-overlay"></div>
 
-<div class="orb pink floating"></div>
-<div class="orb orange floating"></div>
+  <div class="orb pink floating"></div>
+  <div class="orb orange floating"></div>
 
-<div style="
-  position:relative;
-  z-index:2;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  gap:20px;
-">
+  <main class="container">
 
-<h1 class="title" style="font-size:72px; font-weight:900; letter-spacing:6px; color:white;">
-GTA VI
-</h1>
+    <h1 class="title">GTA VI</h1>
 
-<div style="margin:20px 0;">
-<select id="languageSelector" class="select">
-<option value="en">🇺🇸 English</option>
-<option value="pt">🇧🇷 Português</option>
-<option value="es">🇪🇸 Español</option>
-</select>
-</div>
+    <p class="subtitle">Countdown to Launch</p>
 
-<p id="subtitle" style="color:white; opacity:.8; font-size:20px; margin-bottom:40px;">
-Countdown to Launch
-</p>
+    <div id="timer" class="timer">
 
-<div id="timer" style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
-
-<div class="timer-card" style="background:rgba(0,0,0,.35); padding:20px; border-radius:20px; min-width:120px; border:1px solid #ff2ea6;">
-<div id="days" class="neon" style="font-size:42px; color:#ff2ea6; font-weight:900;">0</div>
-<div style="color:white;">Days</div>
-</div>
-
-<div class="timer-card" style="background:rgba(0,0,0,.35); padding:20px; border-radius:20px; min-width:120px; border:1px solid #a855f7;">
-<div id="hours" class="neon" style="font-size:42px; color:#a855f7; font-weight:900;">0</div>
-<div style="color:white;">Hours</div>
-</div>
-
-<div class="timer-card" style="background:rgba(0,0,0,.35); padding:20px; border-radius:20px; min-width:120px; border:1px solid #ff7a18;">
-<div id="minutes" class="neon" style="font-size:42px; color:#ff7a18; font-weight:900;">0</div>
-<div style="color:white;">Minutes</div>
-</div>
-
-<div class="timer-card" style="background:rgba(0,0,0,.35); padding:20px; border-radius:20px; min-width:120px; border:1px solid #22d3ee;">
-<div id="seconds" class="neon" style="font-size:42px; color:#22d3ee; font-weight:900;">0</div>
-<div style="color:white;">Seconds</div>
-</div>
-
-</div>
-
-</div>
-
-<script>
-const targetDate = new Date('2026-11-19T12:00:00-05:00');
-
-const translations = {
-  en: {
-    subtitle: 'Countdown to Launch',
-    days: 'Days',
-    hours: 'Hours',
-    minutes: 'Minutes',
-    seconds: 'Seconds',
-    launchTitle: '🚀 NOW AVAILABLE',
-    launchText: 'GTA VI has officially launched.'
-  },
-  pt: {
-    subtitle: 'Contagem Regressiva para o Lançamento',
-    days: 'Dias',
-    hours: 'Horas',
-    minutes: 'Minutos',
-    seconds: 'Segundos',
-    launchTitle: '🚀 LANÇOU',
-    launchText: 'GTA VI já está disponível.'
-  },
-  es: {
-    subtitle: 'Cuenta Regresiva para el Lanzamiento',
-    days: 'Días',
-    hours: 'Horas',
-    minutes: 'Minutos',
-    seconds: 'Segundos',
-    launchTitle: '🚀 YA DISPONIBLE',
-    launchText: 'GTA VI ya ha sido lanzado.'
-  }
-};
-
-let currentLanguage = 'en';
-
-function applyLanguage(lang) {
-  currentLanguage = lang;
-
-  document.documentElement.lang = lang;
-
-  document.getElementById('subtitle').textContent =
-    translations[lang].subtitle;
-}
-
-function updateCountdown() {
-  const now = new Date();
-  const diff = targetDate - now;
-
-  if (diff <= 0) {
-    document.getElementById('timer').innerHTML = `
-      <div style="text-align:center;">
-        <h2 style="font-size:60px; font-weight:900; color:white; text-shadow:0 0 30px #ff2ea6;">
-          ${translations[currentLanguage].launchTitle}
-        </h2>
-        <p style="color:white; font-size:20px; opacity:.8;">
-          ${translations[currentLanguage].launchText}
-        </p>
+      <div class="timer-card border-pink">
+        <div id="days" class="number pink neon">0</div>
+        <div class="label">Days</div>
       </div>
-    `;
-    return;
-  }
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
+      <div class="timer-card border-purple">
+        <div id="hours" class="number purple neon">0</div>
+        <div class="label">Hours</div>
+      </div>
 
-  document.getElementById('days').textContent = days;
-  document.getElementById('hours').textContent = hours;
-  document.getElementById('minutes').textContent = minutes;
-  document.getElementById('seconds').textContent = seconds;
-}
+      <div class="timer-card border-orange">
+        <div id="minutes" class="number orange neon">0</div>
+        <div class="label">Minutes</div>
+      </div>
 
-document.getElementById('languageSelector').addEventListener('change', (e) => {
-  applyLanguage(e.target.value);
-});
+      <div class="timer-card border-cyan">
+        <div id="seconds" class="number cyan neon">0</div>
+        <div class="label">Seconds</div>
+      </div>
 
-applyLanguage('en');
-updateCountdown();
-setInterval(updateCountdown, 1000);
-</script>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
-
-
-
+```
