@@ -1,48 +1,43 @@
-const targetDate = new Date('2026-11-19T12:00:00-05:00');
+const targetDate = new Date("2026-11-19T12:00:00-05:00");
 
-const daysElement = document.getElementById('days');
-const hoursElement = document.getElementById('hours');
-const minutesElement = document.getElementById('minutes');
-const secondsElement = document.getElementById('seconds');
+const timer = document.getElementById("timer");
+
+const elements = {
+    days: document.getElementById("days"),
+    hours: document.getElementById("hours"),
+    minutes: document.getElementById("minutes"),
+    seconds: document.getElementById("seconds")
+};
+
+const pad = value => String(value).padStart(2, "0");
 
 function updateCountdown() {
-  const now = new Date();
-  const difference = targetDate - now;
 
-  if (difference <= 0) {
-    document.getElementById('timer').innerHTML = `
-      <div style="text-align:center;">
-        <h2 style="
-          font-size:60px;
-          color:white;
-          font-weight:900;
-          text-shadow:0 0 30px #ff2ea6;
-        ">
-          🚀 NOW AVAILABLE
-        </h2>
+    const difference = targetDate.getTime() - Date.now();
 
-        <p style="
-          margin-top:15px;
-          font-size:20px;
-          opacity:.9;
-        ">
-          GTA VI has officially launched.
-        </p>
-      </div>
-    `;
-    return;
-  }
+    if (difference <= 0) {
 
-  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((difference / (1000 * 60)) % 60);
-  const seconds = Math.floor((difference / 1000) % 60);
+        timer.innerHTML = `
+            <div class="launch">
+                <h2>🚀 NOW AVAILABLE</h2>
+                <p>GTA VI has officially launched.</p>
+            </div>
+        `;
 
-  daysElement.textContent = days;
-  hoursElement.textContent = hours;
-  minutesElement.textContent = minutes;
-  secondsElement.textContent = seconds;
+        return;
+    }
+
+    const days = Math.floor(difference / 86400000);
+    const hours = Math.floor(difference / 3600000) % 24;
+    const minutes = Math.floor(difference / 60000) % 60;
+    const seconds = Math.floor(difference / 1000) % 60;
+
+    elements.days.textContent = days;
+    elements.hours.textContent = pad(hours);
+    elements.minutes.textContent = pad(minutes);
+    elements.seconds.textContent = pad(seconds);
+
+    setTimeout(updateCountdown, 1000 - (Date.now() % 1000));
 }
 
 updateCountdown();
-setInterval(updateCountdown, 1000);
