@@ -40,7 +40,8 @@ body{
   background-position:center;
   background-repeat:no-repeat;
 
-  filter:blur(6px);
+  /* Mais escuro */
+  filter:blur(6px) brightness(0.35);
   transform:scale(1.08);
 
   z-index:-3;
@@ -50,15 +51,24 @@ body{
   position:fixed;
   inset:0;
 
+  /* Camada escura com leve gradiente neon */
   background:
     linear-gradient(
       135deg,
-      rgba(255,46,166,.20),
-      rgba(124,58,237,.15),
-      rgba(0,0,0,.60)
+      rgba(255,46,166,.10),
+      rgba(124,58,237,.08),
+      rgba(0,0,0,.90)
     );
 
   z-index:-2;
+}
+
+/* Escurecimento extra */
+.background-overlay::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
 }
 
 /* Layout */
@@ -71,6 +81,8 @@ body{
   align-items:center;
   text-align:center;
   padding:20px;
+  position:relative;
+  z-index:2;
 }
 
 .title{
@@ -106,7 +118,7 @@ body{
 
   border-radius:20px;
 
-  background:rgba(0,0,0,.25);
+  background:rgba(0,0,0,.35);
 
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
@@ -160,7 +172,7 @@ body{
   height:420px;
   border-radius:50%;
   filter:blur(80px);
-  opacity:.25;
+  opacity:.18;
 }
 
 .orb.pink{
