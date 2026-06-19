@@ -16,7 +16,6 @@
   }
 }
 
-
 *{
   margin:0;
   padding:0;
@@ -26,8 +25,28 @@
 body{
   overflow:hidden;
   background:#000;
-  font-family:Arial, Helvetica, sans-serif;
   color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+.logo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0 auto 35px;
+  transition:.3s ease;
+}
+
+.logo:hover{
+  transform:scale(1.08);
+}
+
+.logo svg,
+.logo-svg{
+  display:block;
+  width:52px;
+  height:40px;
+  fill:#fff;
 }
 
 /* Background */
@@ -35,24 +54,15 @@ body{
 .background-image{
   position:fixed;
   inset:0;
-
-  background-image:url('https://www.rockstargames.com/VI/_next/static/media/Jason_and_Lucia_03_landscape.0419q._86ukpt.jpg');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-
-  /* Mais escuro */
-  filter:blur(6px) brightness(0.35);
+  background:url("https://www.rockstargames.com/VI/_next/static/media/Jason_and_Lucia_03_landscape.0419q._86ukpt.jpg") center/cover no-repeat;
+  filter:blur(6px) brightness(.35);
   transform:scale(1.08);
-
   z-index:-3;
 }
 
 .background-overlay{
   position:fixed;
   inset:0;
-
-  /* Camada escura com leve gradiente neon  */
   background:
     linear-gradient(
       135deg,
@@ -60,11 +70,9 @@ body{
       rgba(124,58,237,.08),
       rgba(0,0,0,.90)
     );
-
   z-index:-2;
 }
 
-/* Escurecimento extra */
 .background-overlay::after{
   content:"";
   position:absolute;
@@ -90,7 +98,6 @@ body{
   font-size:72px;
   font-weight:900;
   letter-spacing:6px;
-
   text-shadow:
     0 0 10px rgba(255,255,255,.5),
     0 0 25px rgba(255,46,166,.8),
@@ -98,8 +105,7 @@ body{
 }
 
 .subtitle{
-  margin-top:15px;
-  margin-bottom:50px;
+  margin:15px 0 50px;
   font-size:20px;
   opacity:.9;
 }
@@ -116,14 +122,11 @@ body{
 .timer-card{
   min-width:130px;
   padding:20px;
-
   border-radius:20px;
-
+  border:1px solid rgba(255,255,255,.15);
   background:rgba(0,0,0,.35);
-
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
-
   animation:glow 3s ease-in-out infinite;
   transition:.3s;
 }
@@ -151,17 +154,17 @@ body{
 
 /* Colors */
 
-.pink{ color:#ff2ea6; }
-.purple{ color:#a855f7; }
-.orange{ color:#ff7a18; }
-.cyan{ color:#22d3ee; }
+.pink{color:#ff2ea6;}
+.purple{color:#a855f7;}
+.orange{color:#ff7a18;}
+.cyan{color:#22d3ee;}
 
-.border-pink{ border:1px solid #ff2ea6; }
-.border-purple{ border:1px solid #a855f7; }
-.border-orange{ border:1px solid #ff7a18; }
-.border-cyan{ border:1px solid #22d3ee; }
+.border-pink{border:1px solid #ff2ea6;}
+.border-purple{border:1px solid #a855f7;}
+.border-orange{border:1px solid #ff7a18;}
+.border-cyan{border:1px solid #22d3ee;}
 
-/* Floating Orbs */
+/* Floating */
 
 .floating{
   animation:float 8s ease-in-out infinite;
@@ -188,6 +191,8 @@ body{
   background:#ff7a18;
 }
 
+/* Socials */
+
 .socials{
   display:flex;
   justify-content:center;
@@ -200,19 +205,14 @@ body{
   display:flex;
   align-items:center;
   gap:12px;
-
   padding:14px 22px;
-
   text-decoration:none;
   color:#fff;
-
   background:rgba(0,0,0,.35);
   border:1px solid rgba(255,255,255,.15);
   border-radius:16px;
-
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
-
   transition:.3s ease;
 }
 
@@ -248,4 +248,60 @@ body{
   color:#22d3ee;
   border-color:#22d3ee;
   box-shadow:0 0 25px rgba(34,211,238,.6);
+}
+
+@media (max-width:768px){
+
+  .title{
+    font-size:48px;
+    letter-spacing:2px;
+  }
+
+  .subtitle{
+    font-size:16px;
+    margin-bottom:35px;
+  }
+
+  .timer{
+    gap:14px;
+  }
+
+  .timer-card{
+    min-width:100px;
+    padding:16px;
+  }
+
+  .number{
+    font-size:34px;
+  }
+
+  .social{
+    padding:12px 18px;
+  }
+
+  .logo svg,
+  .logo-svg{
+    width:44px;
+    height:34px;
+  }
+
+  .launch{
+    text-align:center;
+}
+
+.launch h2{
+    font-size:60px;
+    font-weight:900;
+    color:#fff;
+    text-shadow:
+        0 0 15px #ff2ea6,
+        0 0 40px #ff7a18;
+}
+
+.launch p{
+    margin-top:16px;
+    font-size:20px;
+    opacity:.9;
+}
+
 }
