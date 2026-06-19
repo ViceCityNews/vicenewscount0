@@ -1,28 +1,178 @@
+```css
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 15px rgba(255,46,166,.3);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(255,140,66,.7);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255,46,166,.3);
+  }
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  overflow:hidden;
+  background:#000;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#fff;
+}
+
+/* Background */
+
 .background-image{
-  position: fixed;
-  inset: 0;
-  background-image: url('https://www.rockstargames.com/VI/_next/static/media/Jason_and_Lucia_03_landscape.0419q._86ukpt.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position:fixed;
+  inset:0;
 
-  filter: blur(6px);
-  transform: scale(1.05); /* evita bordas do blur */
+  background-image:url('https://www.rockstargames.com/VI/_next/static/media/Jason_and_Lucia_03_landscape.0419q._86ukpt.jpg');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 
-  z-index: -2;
+  filter:blur(6px);
+  transform:scale(1.08);
+
+  z-index:-3;
 }
 
 .background-overlay{
-  position: fixed;
-  inset: 0;
+  position:fixed;
+  inset:0;
 
   background:
     linear-gradient(
       135deg,
-      rgba(255,46,166,.15),
+      rgba(255,46,166,.20),
       rgba(124,58,237,.15),
-      rgba(0,0,0,.45)
+      rgba(0,0,0,.60)
     );
 
-  z-index: -1;
+  z-index:-2;
 }
+
+/* Layout */
+
+.container{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.title{
+  font-size:72px;
+  font-weight:900;
+  letter-spacing:6px;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,.5),
+    0 0 25px rgba(255,46,166,.8),
+    0 0 60px rgba(255,140,66,.6);
+}
+
+.subtitle{
+  margin-top:15px;
+  margin-bottom:50px;
+  font-size:20px;
+  opacity:.9;
+}
+
+/* Timer */
+
+.timer{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.timer-card{
+  min-width:130px;
+  padding:20px;
+
+  border-radius:20px;
+
+  background:rgba(0,0,0,.25);
+
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+
+  animation:glow 3s ease-in-out infinite;
+  transition:.3s;
+}
+
+.timer-card:hover{
+  transform:translateY(-6px) scale(1.05);
+}
+
+.number{
+  font-size:42px;
+  font-weight:900;
+}
+
+.label{
+  margin-top:10px;
+  color:#fff;
+}
+
+.neon{
+  text-shadow:
+    0 0 8px currentColor,
+    0 0 20px currentColor,
+    0 0 40px currentColor;
+}
+
+/* Colors */
+
+.pink{ color:#ff2ea6; }
+.purple{ color:#a855f7; }
+.orange{ color:#ff7a18; }
+.cyan{ color:#22d3ee; }
+
+.border-pink{ border:1px solid #ff2ea6; }
+.border-purple{ border:1px solid #a855f7; }
+.border-orange{ border:1px solid #ff7a18; }
+.border-cyan{ border:1px solid #22d3ee; }
+
+/* Floating Orbs */
+
+.floating{
+  animation:float 8s ease-in-out infinite;
+}
+
+.orb{
+  position:absolute;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:.25;
+}
+
+.orb.pink{
+  top:0;
+  left:0;
+  background:#ff2ea6;
+}
+
+.orb.orange{
+  right:0;
+  bottom:0;
+  background:#ff7a18;
+}
+```
