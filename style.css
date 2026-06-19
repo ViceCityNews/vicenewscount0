@@ -1,0 +1,28 @@
+.background-image{
+  position: fixed;
+  inset: 0;
+  background-image: url('https://www.rockstargames.com/VI/_next/static/media/Jason_and_Lucia_03_landscape.0419q._86ukpt.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(6px);
+  transform: scale(1.05); /* evita bordas do blur */
+
+  z-index: -2;
+}
+
+.background-overlay{
+  position: fixed;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,46,166,.15),
+      rgba(124,58,237,.15),
+      rgba(0,0,0,.45)
+    );
+
+  z-index: -1;
+}
