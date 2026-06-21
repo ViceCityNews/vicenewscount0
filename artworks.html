@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0b0b0f] text-white">
+
+<div id="gallery" class="max-w-6xl mx-auto p-[30px]"></div>
+
+<script>
+const images = [
+    {
+        title: "Jason and Lucia",
+        description: "Official artwork released by Rockstar Games.",
+        image: "images/jason-lucia.jpg"
+    },
+
+    {
+        title: "Vice City",
+        image: "images/vice-city.jpg"
+    }
+];
+
+const gallery = document.getElementById("gallery");
+
+gallery.innerHTML = images.map(item => `
+<section class="rounded-3xl border border-white/10 bg-black/30 backdrop-blur-xl p-6 mb-[30px]">
+
+    <h2 class="text-3xl font-bold text-pink-400 mb-3">
+        ${item.title}
+    </h2>
+
+    ${item.description ? `
+    <p class="text-gray-300 mb-6">
+        ${item.description}
+    </p>
+    ` : ""}
+
+    <img
+        src="${item.image}"
+        alt="${item.title}"
+        loading="lazy"
+        class="w-full rounded-2xl border border-white/10"
+    >
+
+</section>
+`).join("");
+</script>
+
+</body>
+</html>
