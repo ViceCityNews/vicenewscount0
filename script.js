@@ -42,7 +42,6 @@ function updateCountdown() {
 
 updateCountdown();
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2VHEDGXZD"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
