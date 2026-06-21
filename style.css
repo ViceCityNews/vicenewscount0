@@ -54,7 +54,7 @@ body{
 .background-image{
   position:fixed;
   inset:0;
-  background:url("https://www.rockstargames.com/VI/_next/static/media/Jason_and_Lucia_03_landscape.0419q._86ukpt.jpg") center/cover no-repeat;
+  background:url("https://images-ext-1.discordapp.net/external/njZlmRuSscdoaCn3WvxiUPEnQLK3gNmAshsPG_wVE-s/%3Fakim%3D1%26imdensity%3D1%26imwidth%3D1920/https/www.rockstargames.com/VI/_next/static/media/Vice_City_01.135x56yoeu.6t.jpg?format=webp&width=1604&height=902") center/cover no-repeat;
   filter:blur(6px) brightness(.35);
   transform:scale(1.08);
   z-index:-3;
