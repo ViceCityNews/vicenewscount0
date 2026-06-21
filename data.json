@@ -1,0 +1,47 @@
+{
+  "title": "Vice City News",
+  "domain": "vicecity.news",
+  "description": "Independent news source covering Grand Theft Auto VI (GTA VI), including updates, rumors, leaks, gameplay analysis, Rockstar Games announcements, and community developments.",
+  "languages": [
+    "en",
+    "es",
+    "pt"
+  ],
+  "main_language": "en",
+  "authors": [
+    "KaatoDev",
+    "lukex404"
+  ],
+  "editors": [],
+  "contributors": [],
+  "category": "gaming_news",
+  "website_type": "news",
+  "country": "global",
+  "timezone": "UTC",
+  "founded_year": 2026,
+  "status": "active",
+  "tags": [
+    "gta",
+    "gta vi",
+    "grand theft auto vi",
+    "vice city",
+    "rockstar games",
+    "gaming news",
+    "video games"
+  ],
+  "social_links": {
+    "x": "",
+    "instagram": "",
+    "youtube": "",
+    "discord": ""
+  },
+  "contact": {
+    "email": "",
+    "website": "https://vicecity.news"
+  },
+  "rss_feed": "",
+  "logo_url": "",
+  "favicon_url": "",
+  "copyright": "© Vice City News",
+  "version": "1.0.0"
+}
