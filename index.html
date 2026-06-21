@@ -1,156 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>GTA VI Countdown - Release Countdown</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Live countdown to the release of Grand Theft Auto VI. Count down the days, hours, minutes and seconds until GTA VI launches on November 19, 2026.">
+    <title>GTA VI Countdown</title>
+    <meta name="description"
+        content="Countdown to the release of Grand Theft Auto VI. Follow the remaining time, watch trailers, view screenshots, and stay updated with the latest GTA VI news.">
+    <meta name="keywords" content="GTA VI, GTA 6, Grand Theft Auto VI, Rockstar Games, Countdown, Trailers, News">
+    <meta name="author" content="Lucas">
 
-<meta name="keywords" content="GTA VI,GTA 6,Grand Theft Auto VI,Countdown,GTA VI Release,GTA 6 Countdown,Rockstar Games,Release Date">
+    <meta name="theme-color" content="#ff5f95">
 
-<meta name="author" content="Vice City Countdown">
-<meta name="theme-color" content="#ff5ca8">
+    <link rel="icon" href="/src/imgs/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/src/imgs/favicon.svg">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="GTA VI Countdown">
-<meta property="og:description" content="Live countdown to Grand Theft Auto VI's release.">
-<meta property="og:image" content="https://images-ext-1.discordapp.net/external/njZlmRuSscdoaCn3WvxiUPEnQLK3gNmAshsPG_wVE-s/%3Fakim%3D1%26imdensity%3D1%26imwidth%3D1920/https/www.rockstargames.com/VI/_next/static/media/Vice_City_01.135x56yoeu.6t.jpg?format=webp&width=1604&height=902">
-<meta property="og:image:width" content="1604">
-<meta property="og:image:height" content="902">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="GTA VI Countdown">
+    <meta property="og:description" content="Countdown to the biggest release in gaming history.">
+    <meta property="og:image" content="https://SEU-DOMINIO.com/src/imgs/backgound.jpg">
+    <meta property="og:url" content="https://SEU-DOMINIO.com">
+    <meta property="og:site_name" content="GTA VI Countdown">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GTA VI Countdown">
-<meta name="twitter:description" content="Live countdown to Grand Theft Auto VI's release.">
-<meta name="twitter:image" content="https://images-ext-1.discordapp.net/external/njZlmRuSscdoaCn3WvxiUPEnQLK3gNmAshsPG_wVE-s/%3Fakim%3D1%26imdensity%3D1%26imwidth%3D1920/https/www.rockstargames.com/VI/_next/static/media/Vice_City_01.135x56yoeu.6t.jpg?format=webp&width=1604&height=902">
-
-<link rel="icon" href="https://images-ext-1.discordapp.net/external/njZlmRuSscdoaCn3WvxiUPEnQLK3gNmAshsPG_wVE-s/%3Fakim%3D1%26imdensity%3D1%26imwidth%3D1920/https/www.rockstargames.com/VI/_next/static/media/Vice_City_01.135x56yoeu.6t.jpg?format=webp&width=1604&height=902">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GTA VI Countdown">
+    <meta name="twitter:description" content="Countdown to the biggest release in gaming history.">
+    <meta name="twitter:image" content="https://SEU-DOMINIO.com/src/imgs/backgound.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <style>
-        body {
-            font-family: Inter, sans-serif;
-            overflow: hidden;
-        }
-
-        .background {
-    position: relative;
-    overflow: hidden;
-}
-
-.background::before {
-    content: "";
-    position: absolute;
-    inset: -20px;
-    background-image: url("https://images-ext-1.discordapp.net/external/njZlmRuSscdoaCn3WvxiUPEnQLK3gNmAshsPG_wVE-s/%3Fakim%3D1%26imdensity%3D1%26imwidth%3D1920/https/www.rockstargames.com/VI/_next/static/media/Vice_City_01.135x56yoeu.6t.jpg?format=webp&width=1604&height=902");
-    background-size: cover;
-    background-position: center;
-    animation: zoom 25s ease-in-out infinite alternate;
-    filter: blur(10px);
-    transform: scale(1.1);
-    z-index: -1;
-}
-
-        @keyframes zoom {
-            from {
-                transform: scale(1);
-            }
-            to {
-                transform: scale(1.08);
-            }
-        }
-
-        .glass {
-            backdrop-filter: blur(18px);
-            background: rgba(0,0,0,.35);
-            border: 1px solid rgba(255,255,255,.12);
-        }
-
-        .number {
-            text-shadow:
-                0 0 10px rgba(255,90,160,.8),
-                0 0 25px rgba(255,90,160,.5);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-black text-white">
+<body class="min-h-screen text-white">
 
-<div class="background fixed inset-0"></div>
+    <div class="background"></div>
+    <div class="overlay"></div>
 
-<div class="fixed inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/80"></div>
+    <main class="relative min-h-screen px-6 py-10">
 
-<div class="relative min-h-screen flex items-center justify-center p-6">
+        <section class="content-box w-full max-w-5xl mx-auto text-center">
 
-    <div class="">
 
-        <div class="text-center">
+            <img src="/src/imgs/logo.svg" alt="GTA VI Logo" class="w-56 md:w-72 mx-auto mt-5 mb-6 select-none">
 
-            <h2 class="uppercase tracking-[0.5em] text-pink-300 text-sm mb-3">
-                Countdown
-            </h2>
-
-            <h1 class="text-6xl md:text-8xl font-black mb-3 bg-gradient-to-r from-pink-400 via-orange-300 to-yellow-300 bg-clip-text text-transparent">
-                GTA VI
-            </h1>
-
-            <p class="text-white/80 text-lg">
-                Grand Theft Auto VI releases on
+            <p class="uppercase tracking-[10px] text-pink-300 text-sm font-semibold">
+                Rockstar Games
             </p>
 
-            <p class="text-pink-300 font-semibold mt-1">
+            <p class="mt-5 text-zinc-300 text-lg max-w-2xl mx-auto">
+                Counting down to the biggest release in gaming history.
+            </p>
+
+            <div id="timer" class="mt-14 flex flex-wrap justify-center gap-5">
+
+                <div class="card">
+                    <div id="days" class="number">
+                        0
+                    </div>
+                    <div class="label">
+                        Days
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div id="hours" class="number">
+                        00
+                    </div>
+                    <div class="label">
+                        Hours
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div id="minutes" class="number">
+                        00
+                    </div>
+                    <div class="label">
+                        Minutes
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div id="seconds" class="number">
+                        00
+                    </div>
+                    <div class="label">
+                        Seconds
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 flex justify-center">
+                <div class="h-px w-72 bg-gradient-to-r from-transparent via-pink-500 to-transparent opacity-80"></div>
+            </div>
+
+            <p class="release-date mt-8 text-xs uppercase">
                 November 19, 2026
             </p>
 
-        </div>
+        </section>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+        <section class="w-full max-w-5xl mx-auto mt-20">
 
-            <div class="glass rounded-2xl p-8 text-center">
-                <div id="days" class="number text-6xl font-black">000</div>
-                <div class="uppercase text-white/70 tracking-widest mt-2">
-                    Days
-                </div>
+            <h2 class="text-4xl font-bold text-center text-pink-400 mb-10">
+                Trailers
+            </h2>
+
+            <div class="space-y-8">
+
+                <section class="rounded-3xl border border-white/10 bg-black/30 p-6 backdrop-blur-xl">
+                    <h3 class="mb-5 text-2xl font-bold text-pink-400">
+                        Trailer 1
+                    </h3>
+
+                    <div class="overflow-hidden rounded-2xl aspect-video">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/QdBZY2fkU-0"
+                            title="GTA VI Trailer 1" allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+
+                <section class="rounded-3xl border border-white/10 bg-black/30 p-6 backdrop-blur-xl">
+                    <h3 class="mb-5 text-2xl font-bold text-orange-400">
+                        Trailer 2
+                    </h3>
+
+                    <div class="overflow-hidden rounded-2xl aspect-video">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/VQRLujxTm3c"
+                            title="GTA VI Trailer 2" allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+
+                <section class="rounded-3xl border border-white/10 bg-black/30 p-6 backdrop-blur-xl">
+                    <h3 class="mb-5 text-2xl font-bold text-cyan-400">
+                        Official Cover Art Reveal
+                    </h3>
+
+                    <div class="overflow-hidden rounded-2xl aspect-video">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/EiQEBYDox_k"
+                            title="Official Cover Art Reveal" allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+
             </div>
 
-            <div class="glass rounded-2xl p-8 text-center">
-                <div id="hours" class="number text-6xl font-black">00</div>
-                <div class="uppercase text-white/70 tracking-widest mt-2">
-                    Hours
-                </div>
-            </div>
+        </section>
 
-            <div class="glass rounded-2xl p-8 text-center">
-                <div id="minutes" class="number text-6xl font-black">00</div>
-                <div class="uppercase text-white/70 tracking-widest mt-2">
-                    Minutes
-                </div>
-            </div>
 
-            <div class="glass rounded-2xl p-8 text-center">
-                <div id="seconds" class="number text-6xl font-black">00</div>
-                <div class="uppercase text-white/70 tracking-widest mt-2">
-                    Seconds
-                </div>
-            </div>
+    </main>
 
-        </div>
-
-        <div class="text-center mt-12">
-
-           <a href="/trailers.html">
-    <button class="bg-gradient-to-r from-pink-500 to-orange-400 hover:scale-105 transition duration-300 px-8 py-4 rounded-full font-bold shadow-2xl shadow-pink-500/30">
-        Watch Trailer
-    </button>
-</a>
-
-        </div>
-
-    </div>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>

@@ -2,16 +2,9 @@
   "title": "Vice City News",
   "domain": "vicecity.news",
   "description": "Independent news source covering Grand Theft Auto VI (GTA VI), including updates, rumors, leaks, gameplay analysis, Rockstar Games announcements, and community developments.",
-  "languages": [
-    "en",
-    "es",
-    "pt"
-  ],
+  "languages": ["en", "es", "pt"],
   "main_language": "en",
-  "authors": [
-    "KaatoDev",
-    "lukex404"
-  ],
+  "authors": ["KaatoDev", "lukex404"],
   "editors": [],
   "contributors": [],
   "category": "gaming_news",
