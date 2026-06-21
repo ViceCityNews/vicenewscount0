@@ -34,11 +34,22 @@
         }
 
         .background {
-            background-image: url("https://images-ext-1.discordapp.net/external/njZlmRuSscdoaCn3WvxiUPEnQLK3gNmAshsPG_wVE-s/%3Fakim%3D1%26imdensity%3D1%26imwidth%3D1920/https/www.rockstargames.com/VI/_next/static/media/Vice_City_01.135x56yoeu.6t.jpg?format=webp&width=1604&height=902");
-            background-size: cover;
-            background-position: center;
-            animation: zoom 25s ease-in-out infinite alternate;
-        }
+    position: relative;
+    overflow: hidden;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    background-image: url("https://images-ext-1.discordapp.net/external/njZlmRuSscdoaCn3WvxiUPEnQLK3gNmAshsPG_wVE-s/%3Fakim%3D1%26imdensity%3D1%26imwidth%3D1920/https/www.rockstargames.com/VI/_next/static/media/Vice_City_01.135x56yoeu.6t.jpg?format=webp&width=1604&height=902");
+    background-size: cover;
+    background-position: center;
+    animation: zoom 25s ease-in-out infinite alternate;
+    filter: blur(10px);
+    transform: scale(1.1);
+    z-index: -1;
+}
 
         @keyframes zoom {
             from {
