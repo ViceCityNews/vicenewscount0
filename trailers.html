@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA VI • Trailers</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @keyframes float{
+            0%,100%{transform:translateY(0)}
+            50%{transform:translateY(-25px)}
+        }
+
+        .float{
+            animation:float 8s ease-in-out infinite;
+        }
+
+        .neon{
+            text-shadow:
+            0 0 10px currentColor,
+            0 0 20px currentColor,
+            0 0 40px currentColor;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden bg-black text-white">
+
+    <div
+        class="fixed inset-0 -z-30 scale-110 bg-cover bg-center blur-md brightness-50"
+        style="background-image:url('https://www.rockstargames.com/VI/_next/static/media/Vice_City_01.135x56yoeu.6t.jpg')">
+    </div>
+
+    <div class="fixed inset-0 -z-20 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-black/90"></div>
+
+    <div class="fixed inset-0 -z-10 bg-black/40"></div>
+
+    <div class="float absolute left-0 top-0 h-[420px] w-[420px] rounded-full bg-pink-500 opacity-20 blur-[90px]"></div>
+
+    <div class="float absolute bottom-0 right-0 h-[420px] w-[420px] rounded-full bg-orange-500 opacity-20 blur-[90px]"></div>
+
+    <nav class="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-black/40 backdrop-blur-xl">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+            <a href="/" class="text-2xl transition hover:text-pink-400">🏠</a>
+
+            <div class="flex gap-8 font-semibold uppercase tracking-widest">
+                <a href="/trailers" class="text-pink-400">Trailers</a>
+                <a href="/images" class="hover:text-orange-400 transition">Images</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 mx-auto max-w-5xl px-6 pt-28 pb-16">
+
+        <h1 class="mb-2 text-center text-5xl font-black tracking-[8px] neon text-pink-400">
+            TRAILERS
+        </h1>
+
+        <p class="mb-12 text-center text-white/70">
+            Watch every official GTA VI trailer.
+        </p>
+
+        <div class="space-y-10">
+
+            <section class="rounded-3xl border border-white/10 bg-black/30 p-6 backdrop-blur-xl">
+                <h2 class="mb-5 text-2xl font-bold text-pink-400">
+                    Trailer 1
+                </h2>
+
+                <div class="overflow-hidden rounded-2xl aspect-video">
+                    <iframe
+                        class="h-full w-full"
+                        src="https://www.youtube.com/embed/QdBZY2fkU-0"
+                        title="GTA VI Trailer 1"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+            <section class="rounded-3xl border border-white/10 bg-black/30 p-6 backdrop-blur-xl">
+                <h2 class="mb-5 text-2xl font-bold text-orange-400">
+                    Trailer 2
+                </h2>
+
+                <div class="overflow-hidden rounded-2xl aspect-video">
+                    <iframe
+                        class="h-full w-full"
+                        src="https://www.youtube.com/embed/VQRLujxTm3c"
+                        title="GTA VI Trailer 2"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
