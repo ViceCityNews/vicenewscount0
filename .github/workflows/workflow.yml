@@ -1,16 +1,41 @@
-- name: Commit and push changes
-  run: |
-    git config user.name "github-actions[bot]"
-    git config user.email "github-actions[bot]@users.noreply.github.com"
+name: Daily Countdown
 
-    git add README.md contador.json
+on:
+  schedule:
+    - cron: "* * * * *"
+  workflow_dispatch:
 
-    if git diff --cached --quiet; then
-      echo "Nenhuma alteração."
-    else
-      git commit -m "daily update"
+jobs:
+  update:
+    runs-on: ubuntu-latest
 
-      git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+    permissions:
+      contents: write
 
-      git push origin HEAD
-    fi
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.PAT }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Run script
+        run: node update.js
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "user"
+          git config user.email "mail"
+
+          git add README.md contador.json
+
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteração."
+          else
+            git commit -m "daily update"
+            git push origin HEAD
+          fi
