@@ -2,7 +2,7 @@ name: Daily Countdown
 
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "*/5 * * * *"  # roda a cada 5 minutos (evita spam de 1 min)
   workflow_dispatch:
 
 jobs:
@@ -16,7 +16,8 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v5
         with:
-          token: ${{ secrets.PAT }}
+          fetch-depth: 0
+          persist-credentials: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
@@ -28,8 +29,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config user.name "user"
-          git config user.email "mail"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git add README.md contador.json
 
