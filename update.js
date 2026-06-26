@@ -22,7 +22,7 @@ fs.writeFileSync("contador.json", JSON.stringify(contador, null, 2));
 
 const readme = `# Countdown
 
-${days} days ${hours} hours ${minutes} minutes
+## ⌛ ${days} days ${hours} hours ${minutes} minutes
 `;
 
 fs.writeFileSync("README.md", readme);
