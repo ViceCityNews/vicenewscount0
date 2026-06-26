@@ -2,7 +2,7 @@ name: Daily Countdown
 
 on:
   schedule:
-    - cron: "*/5 * * * *"  # roda a cada 5 minutos (evita spam de 1 min)
+    - cron: "* * * * *"
   workflow_dispatch:
 
 jobs:
@@ -13,30 +13,35 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-          persist-credentials: true
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 24
 
-      - name: Run script
+      - name: Install dependencies
+        run: npm install
+        continue-on-error: true
+
+      - name: Run update script
         run: node update.js
 
-      - name: Commit and push changes
+      - name: Check changes
+        id: changes
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add README.md contador.json
-
-          if git diff --cached --quiet; then
-            echo "Nenhuma alteração."
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
           else
-            git commit -m "daily update"
-            git push origin HEAD
+            echo "changed=true" >> $GITHUB_OUTPUT
           fi
+
+      - name: Commit & push changes
+        if: steps.changes.outputs.changed == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🔄 Daily update"
+          commit_user_name: "ViceCity.News"
+          commit_user_email: "12345678+ViceCity.News@users.noreply.github.com"
+          file_pattern: "README.md contador.json **/*"
