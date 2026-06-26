@@ -31,8 +31,8 @@ jobs:
 
       - name: Commit and Push
         run: |
-          git config user.name "SEU_USUARIO"
-          git config user.email "SEU_EMAIL_VERIFICADO"
+          git config user.name "user"
+          git config user.email "mail"
 
           git add README.md contador.json
 
